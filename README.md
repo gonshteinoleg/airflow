@@ -46,7 +46,7 @@ hello_operator
 <img width="1184" alt="image" src="https://user-images.githubusercontent.com/97543975/174017976-51067614-1a40-42c9-af03-84386d537c95.png">
 <img width="805" alt="image" src="https://user-images.githubusercontent.com/97543975/174018233-a38c84bc-b6f7-4127-9aa3-4caca389450c.png">
 
-Далее, откройте на виртуальной машине файл docker-compose.yml и вставьте в контейнер git-sync ваш токен и пользователя.
+Далее, откройте на виртуальной машине файл docker-compose.yml, вставьте в контейнер git-sync ваш токен и имя пользователя.
 <img width="1025" alt="image" src="https://user-images.githubusercontent.com/97543975/174019114-b577bc92-3582-4471-9dfe-4f29fc7baf1b.png">
 
 ```
