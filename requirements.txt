@@ -1,0 +1,5 @@
+clickhouse-driver==0.2.3
+pandas
+user-agents
+lz4
+clickhouse_cityhash
