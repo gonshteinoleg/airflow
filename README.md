@@ -103,14 +103,7 @@ docker build . --tag airflow:latest
 ```
 <img width="738" alt="image" src="https://user-images.githubusercontent.com/97543975/174025494-f4b36b54-2919-40a3-9977-1052907e6aeb.png">
 
-## Шаг 9. Установите Docker Compose
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
-```
-
-## Шаг 10. Запустите монтирование образов с помощью Docker Compose
+## Шаг 9. Запустите монтирование образов с помощью Docker Compose
 ```
 docker compose up -d
 ```
