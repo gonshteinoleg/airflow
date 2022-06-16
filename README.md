@@ -52,3 +52,25 @@ hello_operator
 ```
 Хранение токена в коде это не самый безопасный способ и несет за собой риски.
 ```
+
+## Шаг 7. Установите Docker
+Установите Docker
+```
+sudo apt install docker.io
+```
+Сбросьте пароль root и введите новый
+```
+sudo passwd
+```
+Создайте группу докеров и добавьте в неё пользователя
+```
+sudo groupadd docker
+sudo usermod -aG docker ${USER}
+su -s /bin/bash ${USER}
+```
+Запустите докер
+```
+docker run hello-world
+```
+Если все было настроено правильно, вы увидите следующее:
+<img width="734" alt="image" src="https://user-images.githubusercontent.com/97543975/174024542-6f705951-8baf-4415-b682-1e7f2f865983.png">
