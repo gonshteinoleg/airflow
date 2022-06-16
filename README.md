@@ -6,7 +6,7 @@
 ## Шаг 2. Клонируйте этот репозиторий на виртуальную машину
 ```
 sudo apt install git
-git clone https://github.com/gonshteinoleg/Airflow.git
+git clone https://github.com/gonshteinoleg/airflow.git
 ```
 <img width="738" alt="image" src="https://user-images.githubusercontent.com/97543975/174015597-83734b74-1679-4f9e-a8b2-fe7f5e6fe248.png">
 
@@ -53,24 +53,64 @@ hello_operator
 Хранение токена в коде это не самый безопасный способ и несет за собой риски.
 ```
 
-## Шаг 7. Установите Docker
-Установите Docker
+## Шаг 7. Установите Docker и Docker Compose
+Выполните в консоли виртуальной машины следующие команды:
 ```
-sudo apt install docker.io
+sudo apt-get update
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+    
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
-Сбросьте пароль root и введите новый
-```
-sudo passwd
-```
-Создайте группу докеров и добавьте в неё пользователя
+
+Добавьте группы докера
 ```
 sudo groupadd docker
-sudo usermod -aG docker ${USER}
-su -s /bin/bash ${USER}
+sudo usermod -aG docker $USER
 ```
-Запустите докер
+
+Если все было сделано верно, команда
 ```
-docker run hello-world
+sudo docker run hello-world
 ```
-Если все было настроено правильно, вы увидите следующее:
-<img width="734" alt="image" src="https://user-images.githubusercontent.com/97543975/174024542-6f705951-8baf-4415-b682-1e7f2f865983.png">
+выведит следующее:
+
+<img width="735" alt="image" src="https://user-images.githubusercontent.com/97543975/174040284-f42055a6-075b-45c9-9904-c478517e5c47.png">
+
+Далее, установите Docker Compose
+```
+mkdir -p ~/.docker/cli-plugins/
+curl -SL https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+```
+
+## Шаг 8. Запустите сборку контейнера
+```
+cd airflow
+docker build . --tag airflow:latest
+```
+<img width="738" alt="image" src="https://user-images.githubusercontent.com/97543975/174025494-f4b36b54-2919-40a3-9977-1052907e6aeb.png">
+
+## Шаг 9. Установите Docker Compose
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+```
+
+## Шаг 10. Запустите монтирование образов с помощью Docker Compose
+```
+docker compose up -d
+```
