@@ -75,26 +75,25 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
-Добавьте группы докера
+Далее, смените пароль для root
+```
+sudo passwd
+```
+
+И настройте группы докера
 ```
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker ${USER}
+su -s /bin/bash ${USER}
 ```
 
 Если все было сделано верно, команда
 ```
-sudo docker run hello-world
+docker run hello-world
 ```
 выведит следующее:
 
 <img width="735" alt="image" src="https://user-images.githubusercontent.com/97543975/174040284-f42055a6-075b-45c9-9904-c478517e5c47.png">
-
-Далее, установите Docker Compose
-```
-mkdir -p ~/.docker/cli-plugins/
-curl -SL https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
-chmod +x ~/.docker/cli-plugins/docker-compose
-```
 
 ## Шаг 8. Запустите сборку контейнера
 ```
