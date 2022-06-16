@@ -92,7 +92,7 @@ su -s /bin/bash ${USER}
 ```
 docker run hello-world
 ```
-выведит следующее:
+выведет следующее:
 
 <img width="735" alt="image" src="https://user-images.githubusercontent.com/97543975/174040284-f42055a6-075b-45c9-9904-c478517e5c47.png">
 
