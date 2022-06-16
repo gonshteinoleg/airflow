@@ -75,9 +75,10 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
-Далее, смените пароль для root
+Далее, смените пароль для root и пользователя (в моем случае user1)
 ```
 sudo passwd
+sudo passwd user1
 ```
 
 И настройте группы докера
