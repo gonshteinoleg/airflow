@@ -107,3 +107,21 @@ docker build . --tag airflow:latest
 ```
 docker compose up -d
 ```
+<img width="734" alt="image" src="https://user-images.githubusercontent.com/97543975/174082852-9e197142-b801-4b1c-ba7c-73c8161ef612.png">
+
+Проверить запущенные даги можно командой
+```
+docker exec -it --user airflow airflow-scheduler bash -c "airflow dags list"
+```
+<img width="736" alt="image" src="https://user-images.githubusercontent.com/97543975/174083371-15b72529-d034-4f70-aa43-b0df3de3d422.png">
+
+
+## Шаг 10. Перейдите в web-интерфейс
+Вставьте в строку браузера IP виртуальной машины и 8080 порт, например http://130.193.55.218:8080/
+<img width="1919" alt="image" src="https://user-images.githubusercontent.com/97543975/174083540-afe16ff7-766a-48c1-92c7-d7384acd1353.png">
+
+Логин/Пароль по умолчанию airflow/airflow
+<img width="1919" alt="image" src="https://user-images.githubusercontent.com/97543975/174083703-f225dbac-52f8-4c15-9bf7-6bb0429fb3b2.png">
+
+## Что дальше?
+Синхронизация с репозиторием будет происходить автоматически, т.е. дальше вы просто складываете ваши даги в репозиторий и они почти сразу подтянутся в папку dags.
