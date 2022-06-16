@@ -47,7 +47,7 @@ hello_operator
 <img width="805" alt="image" src="https://user-images.githubusercontent.com/97543975/174018233-a38c84bc-b6f7-4127-9aa3-4caca389450c.png">
 
 Далее, откройте на виртуальной машине файл docker-compose.yml и вставьте в контейнер git-sync ваш токен и пользователя.
-![Uploading image.png…]()
+<img width="1025" alt="image" src="https://user-images.githubusercontent.com/97543975/174019114-b577bc92-3582-4471-9dfe-4f29fc7baf1b.png">
 
 ```
 Хранение токена в коде это не самый безопасный способ и несет за собой риски.
