@@ -50,7 +50,7 @@ hello_operator
 <img width="1025" alt="image" src="https://user-images.githubusercontent.com/97543975/174019114-b577bc92-3582-4471-9dfe-4f29fc7baf1b.png">
 
 ```
-Хранение токена в коде это не самый безопасный способ и несет за собой риски.
+Хранение токена в коде это не самый безопасный способ.
 ```
 
 ## Шаг 7. Установите Docker и Docker Compose
