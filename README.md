@@ -40,3 +40,15 @@ hello_operator = PythonOperator(task_id='hello_task',
 
 hello_operator
 ```
+
+## Шаг 6. Скопируйте токен GitHub и вставьте его в файл docker-compose.yml
+Для генерации токена перейдите в настройки, далее в левом меню кликните на Developer Settings, провалитесь в Personal access tokens и создайте токен.
+<img width="1184" alt="image" src="https://user-images.githubusercontent.com/97543975/174017976-51067614-1a40-42c9-af03-84386d537c95.png">
+<img width="805" alt="image" src="https://user-images.githubusercontent.com/97543975/174018233-a38c84bc-b6f7-4127-9aa3-4caca389450c.png">
+
+Далее, откройте на виртуальной машине файл docker-compose.yml и вставьте в контейнер git-sync ваш токен и пользователя.
+![Uploading image.png…]()
+
+```
+Хранение токена в коде это не самый безопасный способ и несет за собой риски.
+```
